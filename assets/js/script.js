@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 // Button functionality 
 // target button 
 var $submit = $('#submit');
@@ -27,3 +28,19 @@ $submit.on('click', function(){
         console.log(response);
     });
 })
+=======
+//create a generator button for users input to ajax request
+//if user selects cat, then next dropdown box will show cat breeds
+//create for loop for response
+
+
+
+
+
+
+
+//set values for user input
+var type = $("#type").val();
+var breed = $("#type1").val();
+var age = $("#age").val();
+>>>>>>> Stashed changes
