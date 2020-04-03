@@ -11,7 +11,69 @@
 
 <body>
     <h1>Pet Adoption </h1>
-    <p>Hello </p>
+
+    <!-- Form to enter animal info -->
+    <form class="pure-form pure-form-stacked">
+        <fieldset>
+            <legend>Find your new pet</legend>
+
+            <!-- Choose pet -->
+            <label for="type">What type of pet are you looking for?</label>
+            <select id="type">
+                <option>Dog</option>
+                <option>Cat</option>
+            </select>
+
+            <!-- Choose breed -->
+            <label for="breed">What breed are you looking for? (This will change depending on the animal selected above.)</label>
+            <select id="type">
+                <option>Dog</option>
+                <option>Cat</option>
+            </select>
+
+            <!-- Choose age -->
+            <label for="age">How old?</label>
+            <select id="age">
+                <option>0-5 Years Old</option>
+                <option>6-10 Years Old</option>
+                <option>11+ Years Old</option>
+            </select>
+
+            <!-- Choose Disability -->
+            <label for="age">Disabled?</label>
+            <select id="age">
+                <option>Yes</option>
+                <option>No</option>
+            </select>
+
+            <!-- Enter Zipcode -->
+            <div class="pure-control-group">
+                <label for="zipCode">Enter Zip Code</label>
+                <input id="zipCode" type="text" placeholder="Enter your Zip Code.">
+            </div>
+
+            <div>
+                <style scoped>
+            
+                    .button-success,
+                    .button-error,
+                    .button-warning,
+                    .button-secondary {
+                        color: white;
+                        border-radius: 4px;
+                        text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+                    }
+            
+                    .button-secondary {
+                        background: rgb(66, 184, 221); /* this is a light blue */
+                    }
+            
+                </style>
+            
+            </div>
+        </fieldset>
+    </form>
+    
     <div>
         <style scoped>
             .button-secondary {
@@ -25,14 +87,14 @@
                 /* this is a light blue */
             }
       </style>
-<!-- <<<<<<< JN-BCS -->
+
         <p>Test</p>
          <button class="button-secondary pure-button">Submit Button</button>
         </div>
-<!-- ======= -->
+
         <button class="button-secondary pure-button">Submit Button</button>
     </div>
-<!-- >>>>>>> master -->
+
 </body>
 
 </html>
