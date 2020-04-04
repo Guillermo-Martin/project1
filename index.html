@@ -5,76 +5,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/pure-min.css" integrity="sha384-oAOxQR6DkCoMliIh8yFnu25d7Eq/PHS21PClpwjOTeU2jRSq11vu66rf90/cZr47" crossorigin="anonymous">
-    <link rel="stylesheet" herf="./assets/CSS/styles.css" />
-
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
     <title>Pet Adoption</title>
 
 </head>
-
 <body>
-
-    <div>
-        <header>
-            <h1>Pet Adoption</h1>
-            <p>Hello </p>
+        
+        <header class="navbar">
+                <img class="image" src="C:\Users\kokob\Documents\bootcamp\project01\project1\assets\images\headerImage.jpg" alt="a photo of dogs" width="400" height="100">
         </header>
-    </div>
-
-    <nav class="left sidebar">
-        <section>
-            <select>
-            <option value="cat">Cat</option>
-            <option value="dog">Dog</option>
-            </select>
-            <select>
-                
-            </select> </section>
-
-
-
-    </nav>
-    <main class="content ">
-        <div class="article " id="article1 ">Cats</div>
-        <div class="article " id="article2 ">Dogs</div>
-    </main>
-    <div id="content ">
-
-    </div>
-    </div>
-    <style>
-        .button-secondary {
-            color: white;
-            border-radius: 4px;
-            text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
-        }
+          <br>
         
-        .button-secondary {
-            background: rgb(66, 184, 221);
-            /* this is a light blue */
-        }
-        
-        .button-secondary {
-            color: white;
-            border-radius: 4px;
-            text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
-        }
-        
-        .button-secondary {
-            background: rgb(66, 184, 221);
-            /* this is a light blue */
-        }
-    </style>
-    <button class=" button-secondary pure-button ">Submit Button</button>
-    </div>
-
-
-    <h1>Pet Adoption </h1>
-
     <!-- Form to enter animal info -->
-    <form class="pure-form pure-form-stacked">
-        <fieldset>
-            <legend>Find your new pet</legend>
-
+    <form id="pureForm" class="pure-form">
             <!-- Choose pet -->
             <label for="type">What type of pet are you looking for?</label>
             <select id="type">
@@ -82,80 +26,18 @@
                 <option>Cat</option>
             </select>
 
-            <!-- Choose breed -->
-            <label for="breed">What breed are you looking for? (This will change depending on the animal selected above.)</label>
-            <select id="type1">
-                <option>Dog</option>
-                <option>Cat</option>
-            </select>
-            <div id="facts">test</div>
-            <!-- Choose age -->
-            <label for="age">How old?</label>
-            <select id="age">
-                <option>0-5 Years Old</option>
-                <option>6-10 Years Old</option>
-                <option>11+ Years Old</option>
-            </select>
-
-            <!-- Choose Disability -->
-            <label for="age">Disabled?</label>
-            <select id="age">
-                <option>Yes</option>
-                <option>No</option>
-            </select>
-
-            <!-- Enter Zipcode -->
-            <div class="pure-control-group">
-                <label for="zipCode">Enter Zip Code</label>
-                <input id="zipCode" type="text" placeholder="Enter your Zip Code.">
-            </div>
-
-            <div>
-                <style scoped>
-            
-                    .button-success,
-                    .button-error,
-                    .button-warning,
-                    .button-secondary {
-                        color: white;
-                        border-radius: 4px;
-                        text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
-                    }
-            
-                    .button-secondary {
-                        background: rgb(66, 184, 221); /* this is a light blue */
-                    }
-            
-                </style>
-            
-            </div>
         </fieldset>
     </form>
-    
-    <div>
-        <style scoped>
-            .button-secondary {
-                color: white;
-                border-radius: 4px;
-                text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
-            }
-            
-            .button-secondary {
-                background: rgb(66, 184, 221);
-                /* this is a light blue */
-            }
-      </style>
+    <div class="submitbtn">
+        <p>Test</p>
+        <br>
+         <button id="submit" class="button-secondary pure-button">Submit Button</button>
+        <button id="submit" class="button-secondary pure-button">Clear Button</button>
 
-         <button class="button-secondary pure-button" id="submit">Submit Button</button>
-        </div>
-
-        <button class="button-secondary pure-button">Submit Button</button>
     </div>
-
     <!-- jQuery, then our JavaScript file -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="./assets/js/script.js"></script>
 
 </body>
-
 </html>
