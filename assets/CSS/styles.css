@@ -1,18 +1,15 @@
-    /* styling for the page header  */
-    /* styling for the right-margin */
-    /* styling for the left-margin */
-    /* styling for images */
-    /* styling for buttons */
-    
-    .button-secondary {
-        color: white;
-        border-radius: 4px;
-        text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
-    }
-    
-    .button-secondary {
-        background: rgb(66, 184, 221);
-        /* this is a light blue */
-    }
-    /* styling for the body */
-    /* styling for the footer */
+.navbar{
+    text-align: center;
+    padding-top: 10px;
+    margin-left: 37.5%;
+    margin-right: 37.5%;
+}
+.submitbtn{
+    text-align: center;
+}
+body{
+    text-align: center;
+}
+#submit{
+    background-color: lightskyblue
+}
