@@ -3,7 +3,7 @@
 var $submit = $('#submit');
 
 // Add event listener
-$submit.on('click', function(){
+$submit.on('click', function() {
     // Pet finder AJAX
     //set values for user input
     var type = $("#type").val().toLowerCase();
@@ -19,84 +19,83 @@ $submit.on('click', function(){
 
     // Animal facts AJAX
     $.ajax({
-        url:  animalFactsURL,
+        url: animalFactsURL,
         method: "GET"
-    }).then(function(response){
+    }).then(function(response) {
         console.log(response);
         console.log(response[0].text);
         var aniFacts = response[0].text;
         facts.text(aniFacts);
         facts.append();
     });
-    
-    
+
+
 
     // Adoption info AJAX
     $.ajax({
-        headers:{
-            'Authorization': 'Bearer ' + petFinderAPI     
+        headers: {
+            'Authorization': 'Bearer ' + petFinderAPI
         },
-        url:  petFinderURL,
+        url: petFinderURL,
         method: "GET"
-    }).then(function(response){
+    }).then(function(response) {
         console.log(response);
 
 
-        for(var i = 0; i < response.animals.length; i++){
+        for (var i = 0; i < response.animals.length; i++) {
 
             // gather all the data
-                // animal type
-                var animalType = response.animals[i].type;
-                // animal breed
-                var animalBreed = response.animals[i].breeds.primary;
-                // animal age
-                var animalAge = response.animals[i].age;
-                // animal description
-                var animalDescription = response.animals[i].description;
-                // animal name
-                var animalName = response.animals[i].name;
-                // animal gender
-                var animalGender = response.animals[i].gender;
-                // animal picture
-                var animalPic;
-                //if(response.animals[i].photos === 0)
-                
-                if(response.animals[i].photos[0] !== undefined){
-                    animalPic = response.animals[i].photos[0].large;
-                } // else {
-                //     $animalPicEl.attr("src", "https://i.pinimg.com/originals/b8/be/0e/b8be0e0e188abc4169051df8b1a90a76.jpg");
-                // }
-                
-                // console.log(response.animals[i].photos[0].large)
-                // console.log(response.animals[i].photos.length)
+            // animal type
+            var animalType = response.animals[i].type;
+            // animal breed
+            var animalBreed = response.animals[i].breeds.primary;
+            // animal age
+            var animalAge = response.animals[i].age;
+            // animal description
+            var animalDescription = response.animals[i].description;
+            // animal name
+            var animalName = response.animals[i].name;
+            // animal gender
+            var animalGender = response.animals[i].gender;
+            // animal picture
+            var animalPic;
+            //if(response.animals[i].photos === 0)
+            if (response.animals[i].photos[0] !== undefined) {
+                animalPic = response.animals[i].photos[0].large;
+            }
 
-                // if(parseInt(response.animals[i].photos.length) === 0){
-                //     console.log("There's no picture");
-                // }
+            // console.log(response.animals[i].photos[0].large)
+            // console.log(response.animals[i].photos.length)
+
+            // if(parseInt(response.animals[i].photos.length) === 0){
+            //     console.log("There's no picture");
+            // }
+
 
                 var animalURL = response.animals[i].url;
 
 
             // create the elements to put into the html
-                var $animalTypeEl = $('<h2>');
-                var $animalBreedEl = $('<p>');
-                var $animalAgeEl = $('<p>');
-                var $animalDescriptionEl = $('<p>');
-                var $animalName = $('<p>');
-                var $animalGender = $('<p>');
-                
-                
+
+            var $animalTypeEl = $('<h2>');
+            var $animalBreedEl = $('<p>');
+            var $animalAgeEl = $('<p>');
+            var $animalDescriptionEl = $('<p>');
+            var $animalName = $('<p>');
+            var $animalGender = $('<p>');
+
 
             // add text to the elements
-                $animalTypeEl.text(animalType);
-                $animalBreedEl.text(animalBreed);
-                $animalAgeEl.text(animalAge);
-                $animalDescriptionEl.text(animalDescription);
-                $animalName.text(animalName);
-                $animalGender.text(animalGender);
-                
+            $animalTypeEl.text(animalType);
+            $animalBreedEl.text(animalBreed);
+            $animalAgeEl.text(animalAge);
+            $animalDescriptionEl.text(animalDescription);
+            $animalName.text(animalName);
+            $animalGender.text(animalGender);
+
 
             // appending to the div 
+
                 var $adoptionData = $('#adoptionData');
             
                 $adoptionData.append($animalTypeEl);
@@ -116,7 +115,6 @@ $submit.on('click', function(){
                     $animalURL.append($animalPicEl);
                     $adoptionData.append($animalURL);
                 }
-                
                 
         }
 
