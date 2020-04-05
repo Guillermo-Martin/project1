@@ -72,14 +72,17 @@ $submit.on('click', function() {
             // }
 
 
+                var animalURL = response.animals[i].url;
+
+
             // create the elements to put into the html
+
             var $animalTypeEl = $('<h2>');
             var $animalBreedEl = $('<p>');
             var $animalAgeEl = $('<p>');
             var $animalDescriptionEl = $('<p>');
             var $animalName = $('<p>');
             var $animalGender = $('<p>');
-
 
 
             // add text to the elements
@@ -92,22 +95,27 @@ $submit.on('click', function() {
 
 
             // appending to the div 
-            var $adoptionData = $('#adoptionData');
 
-            $adoptionData.append($animalTypeEl);
-            $adoptionData.append($animalBreedEl);
-            $adoptionData.append($animalAgeEl);
-            $adoptionData.append($animalDescriptionEl);
-            $adoptionData.append($animalName);
-            $adoptionData.append($animalGender);
+                var $adoptionData = $('#adoptionData');
+            
+                $adoptionData.append($animalTypeEl);
+                $adoptionData.append($animalBreedEl);
+                $adoptionData.append($animalAgeEl);
+                $adoptionData.append($animalDescriptionEl);
+                $adoptionData.append($animalName);
+                $adoptionData.append($animalGender);
 
-            if (animalPic) {
-                var $animalPicEl = $('<img>');
-                $animalPicEl.attr("src", animalPic);
-                $adoptionData.append($animalPicEl);
-            }
-
-
+                
+                
+                if(animalPic){
+                    var $animalURL = $('<a>');
+                    $animalURL.attr('href', animalURL);
+                    var $animalPicEl = $('<img>');
+                    $animalPicEl.attr("src", animalPic);
+                    $animalURL.append($animalPicEl);
+                    $adoptionData.append($animalURL);
+                }
+                
         }
 
 
