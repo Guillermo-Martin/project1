@@ -60,7 +60,7 @@ $submit.on('click', function(){
                 // animal picture
                 var animalPic;
                 //if(response.animals[i].photos === 0)
-                if(response.animals[i]){
+                if(response.animals[i].photos[0] !== undefined){
                     animalPic = response.animals[i].photos[0].large;
                 }
                 
