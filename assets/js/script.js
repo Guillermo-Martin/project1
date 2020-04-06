@@ -19,7 +19,7 @@ $submit.on('click', function(){
     // if i get cors error, prepend this:  https://cors-anywhere.herokuapp.com/ to the url (see animal facts example)
     var animalFactsURL = `https://cors-anywhere.herokuapp.com/https://cat-fact.herokuapp.com/facts/random?animal_type=${type}&amount=2`;
     var petFinderURL = `https://cors-anywhere.herokuapp.com/https://api.petfinder.com/v2/animals?type=${type}&location=${location}`;
-    var petFinderAPI = "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiJDeXRQZVNycEZNZHhkUU9ac3Q3WFRmQ29lZjJRdlowQ1ZiZEJJZVVBUjhEaElkY3U1TiIsImp0aSI6ImZjZDE2NjAyNDQ1OWQ3YzRmYWEzOGU1ZTM2ZDE2MDE3MmEzZGE5YjlmNjZkOWQ3YjlkMzM4MzA0NzBkNGJjN2NlZDYwNzVjNTE2YzRlNDA1IiwiaWF0IjoxNTg2MTk2OTI1LCJuYmYiOjE1ODYxOTY5MjUsImV4cCI6MTU4NjIwMDUyNSwic3ViIjoiIiwic2NvcGVzIjpbXX0.ZJ0U9YkVjVPggUs_7IMxfosZdZGm8neulgaN1h82RlLs85yUOtrkXBVFlTnqNkem-vntXo5-I_-xsy7tmmKY-sPYrMUZJ1YvwedhERGLbFD0MFLKC1tAT-ZNQY-8HGc6gdk1NWslpNsHDSwsYASA8cZGKoDIyLMLuabetq_ai05Wh1xHrLK714gv-lFcSL0kc1X5KYksQTUReieq-FZ6MFU2L_bllkVs0enf1KPiU0DA4mCJyNptHezrsgsGvbcoB-9g7luwKjVcGn_ozgo0PKz-Scdf6LFjpVzKR-piOkoiqyGVCmVqsSheTgxykfUH8izumAL_65IjJ19sZH6WKw";
+    var petFinderAPI = "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiJDeXRQZVNycEZNZHhkUU9ac3Q3WFRmQ29lZjJRdlowQ1ZiZEJJZVVBUjhEaElkY3U1TiIsImp0aSI6IjNjYzI4YzYyZjA1ODY2N2IzYzExNWJjMWFmMTAzNmI4MzA1YjFiMzJiMzU3YzRlOGFkZmI0Y2JlMTc4OGM5MzhkMTNiYmQyZTY0MzJhZGM3IiwiaWF0IjoxNTg2MjA0NTg5LCJuYmYiOjE1ODYyMDQ1ODksImV4cCI6MTU4NjIwODE4OSwic3ViIjoiIiwic2NvcGVzIjpbXX0.Uv80XhIdqntIJ4dZ3rbJQXIMmd_J9wUFOG22v4XITVQ4wbujK6j4K9v6NNMB2LBs4GnnUjy4etyeMBC3E9FPDz_KIZPHF1ZBO7d1EIhBAXkKmawAxx0HHcp3-wAqP073TyR9vmet9S800PuRB6a_43g_fC1D7ieJFxBXG_ukMfUY7lmPRKkMFueq6P7FRrzRsAKP2Cj6cJ65YEtcK0nRIqnhAXaW-yz53RPeF1vyAiiJssdEv18qvylmlE2uI91KeplusP40CQfc2KzD72FcguQuHYgP8YapOBT2RCNiV7MXy8QK2phGWaadKzw1uoyqMl2Fd7ez4k53ICqMDFXxLA";
 
     // Animal facts AJAX
     $.ajax({
@@ -92,38 +92,30 @@ $submit.on('click', function(){
                 var $animalGender = $('<p>');
                 
                 
-            // add text to the elements
-            $animalTypeEl.text(animalType);
-            $animalBreedEl.text(animalBreed);
-            $animalAgeEl.text(animalAge);
-
             if(animalDescription){
-                $animalDescriptionEl.html(`${animalDescription.toString()}`);
+                $animalDescriptionEl.html("Description: " + `${animalDescription}`);
             } else {
-                $animalDescriptionEl.html(`${animalDescription}`);
+                $animalDescriptionEl.html("Description: " + `${animalDescription}`);
             }
             
+            // add text to the elements
+            $animalName.text("Name: " + animalName);
+            $animalTypeEl.text("Type: " + animalType);
+            $animalBreedEl.text("Breed: " + animalBreed);
+            $animalAgeEl.text("Age: " + animalAge);
+            $animalGender.text("Gender: " + animalGender);
             
 
-
             // console.log(animalDescription.replace("\'", "\\\'"));
-            $animalName.text(animalName);
-            $animalGender.text(animalGender);
+            
+            
 
 
             // appending to the div 
 
                 var $adoptionData = $('#adoptionData');
-            
-                $adoptionData.append($animalTypeEl);
-                $adoptionData.append($animalBreedEl);
-                $adoptionData.append($animalAgeEl);
-                $adoptionData.append($animalDescriptionEl);
-                $adoptionData.append($animalName);
-                $adoptionData.append($animalGender);
 
-                
-            // add picture to html    
+                // add picture to html    
                 // if(animalPic){
                     var $animalURL = $('<a>');
                     $animalURL.attr('href', animalURL);
@@ -133,6 +125,17 @@ $submit.on('click', function(){
                     $animalURL.append($animalPicEl);
                     $adoptionData.append($animalURL);
                 // }
+            
+                $adoptionData.append($animalName);
+                $adoptionData.append($animalTypeEl);
+                $adoptionData.append($animalBreedEl);
+                $adoptionData.append($animalGender);
+                $adoptionData.append($animalAgeEl);
+                $adoptionData.append($animalDescriptionEl);
+                
+
+                
+            
                      
         }
 
