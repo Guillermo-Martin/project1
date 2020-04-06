@@ -19,7 +19,7 @@ $submit.on('click', function(){
     // if i get cors error, prepend this:  https://cors-anywhere.herokuapp.com/ to the url (see animal facts example)
     var animalFactsURL = `https://cors-anywhere.herokuapp.com/https://cat-fact.herokuapp.com/facts/random?animal_type=${type}&amount=2`;
     var petFinderURL = `https://cors-anywhere.herokuapp.com/https://api.petfinder.com/v2/animals?type=${type}&location=${location}`;
-    var petFinderAPI = "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiJDeXRQZVNycEZNZHhkUU9ac3Q3WFRmQ29lZjJRdlowQ1ZiZEJJZVVBUjhEaElkY3U1TiIsImp0aSI6IjNjYzI4YzYyZjA1ODY2N2IzYzExNWJjMWFmMTAzNmI4MzA1YjFiMzJiMzU3YzRlOGFkZmI0Y2JlMTc4OGM5MzhkMTNiYmQyZTY0MzJhZGM3IiwiaWF0IjoxNTg2MjA0NTg5LCJuYmYiOjE1ODYyMDQ1ODksImV4cCI6MTU4NjIwODE4OSwic3ViIjoiIiwic2NvcGVzIjpbXX0.Uv80XhIdqntIJ4dZ3rbJQXIMmd_J9wUFOG22v4XITVQ4wbujK6j4K9v6NNMB2LBs4GnnUjy4etyeMBC3E9FPDz_KIZPHF1ZBO7d1EIhBAXkKmawAxx0HHcp3-wAqP073TyR9vmet9S800PuRB6a_43g_fC1D7ieJFxBXG_ukMfUY7lmPRKkMFueq6P7FRrzRsAKP2Cj6cJ65YEtcK0nRIqnhAXaW-yz53RPeF1vyAiiJssdEv18qvylmlE2uI91KeplusP40CQfc2KzD72FcguQuHYgP8YapOBT2RCNiV7MXy8QK2phGWaadKzw1uoyqMl2Fd7ez4k53ICqMDFXxLA";
+    var petFinderAPI = "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiJDeXRQZVNycEZNZHhkUU9ac3Q3WFRmQ29lZjJRdlowQ1ZiZEJJZVVBUjhEaElkY3U1TiIsImp0aSI6ImRiMzNlMWVjYTdmMTdlNjFlYTIwNjExMTU5MTRkODI2ZjI3ZGQ4OGNiZjE1YzRlNjc1NTNlNmE2Nzk3MzFjY2U4ZGMzOTg3Yjk0ZDZiNmUxIiwiaWF0IjoxNTg2MjA4MzQwLCJuYmYiOjE1ODYyMDgzNDAsImV4cCI6MTU4NjIxMTk0MCwic3ViIjoiIiwic2NvcGVzIjpbXX0.luln-0EjkhqExFl0yaglhwg5auYirKvZqKtgNVwxRWd4m1I4TGtyMvwJcfMyZKxnTfWKmbyET2EU8UCYvH-RybyfwYZeZzvLt1JDWVm2Vaw5E-srN_u2108QF8MNrTgKHoLO-8N3UDiO2j4Cn2yrOVql5ERBB2LLjO8XzR7RTDsmaxaLgCy6Gd8XyFJRM2I806ASuAlpXJcBi2M4yEyFjevXllIAm-WRgWm03vFIjyYz8zDrJ3xpgHrrFwFukKuyqgcuBjmBF0_h_FujDi4X9tizMkJbjZ2gEV6qJ1wB8lUkAE3y7vWONHuTUvMRDtbrLsxcCWFi-Gx1xBaPxPEdYw";
 
     // Animal facts AJAX
     $.ajax({
@@ -85,23 +85,41 @@ $submit.on('click', function(){
 
             // create the elements to put into the html
                 var $animalTypeEl = $('<h2>');
-                var $animalBreedEl = $('<p>');
+                var $animalBreedEl = $('<a>');
                 var $animalAgeEl = $('<p>');
                 var $animalDescriptionEl = $('<p>');
                 var $animalName = $('<p>');
                 var $animalGender = $('<p>');
+
+                // write if statements for dog, short and long-haired cats
+                if(animalType === "Dog" && animalBreed === "Chihuahua"){
+                    $animalBreedEl.attr("href", "https://en.wikipedia.org/wiki/Chihuahua_(dog)");
+                } else if(animalType === "Dog"){
+                    $animalBreedEl.attr("href", `https://en.wikipedia.org/wiki/${animalBreed}`);
+                } else if(animalType === "Cat" && animalBreed === "Domestic Short Hair"){
+                    $animalBreedEl.attr("href", "https://en.wikipedia.org/wiki/Domestic_short-haired_cat");
+                } else if(animalType === "Cat" && animalBreed === "Domestic Long Hair"){
+                    $animalBreedEl.attr("href", "https://en.wikipedia.org/wiki/Domestic_long-haired_cat");
+                } else if(animalType === "Cat" && animalBreed === "Domestic Medium Hair"){
+                    $animalBreedEl.attr("href", "https://trupanion.com/breeds/cat/domestic-medium-hair");
+                } else if(animalType === "Cat"){
+                    $animalBreedEl.attr("href", `https://en.wikipedia.org/wiki/${animalBreed}_cat`);
+                } 
+                
+
                 
                 
             if(animalDescription){
                 $animalDescriptionEl.html("Description: " + `${animalDescription}`);
             } else {
-                $animalDescriptionEl.html("Description: " + `${animalDescription}`);
+                $animalDescriptionEl.html("Description: " + "Unavailable");
             }
             
             // add text to the elements
             $animalName.text("Name: " + animalName);
             $animalTypeEl.text("Type: " + animalType);
             $animalBreedEl.text("Breed: " + animalBreed);
+            // $animalBreedLink.text("Breed: " + animalBreed);
             $animalAgeEl.text("Age: " + animalAge);
             $animalGender.text("Gender: " + animalGender);
             
@@ -128,6 +146,7 @@ $submit.on('click', function(){
             
                 $adoptionData.append($animalName);
                 $adoptionData.append($animalTypeEl);
+                // $adoptionData.append($animalBreedLink)
                 $adoptionData.append($animalBreedEl);
                 $adoptionData.append($animalGender);
                 $adoptionData.append($animalAgeEl);
