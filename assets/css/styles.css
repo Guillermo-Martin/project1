@@ -13,3 +13,12 @@ body{
 #submit{
     background-color: lightskyblue
 }
+
+#adoptionData{
+    text-align: center;
+}
+.card{
+    color: darkmagenta;
+    margin: auto;
+    /* text-align: center !important; */
+}
