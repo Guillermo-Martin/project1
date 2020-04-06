@@ -2,6 +2,8 @@
 // target button 
 var $submit = $('#submit');
 
+var placeholder = "./assets/images/placeholder.jpg";
+
 // Add event listener
 $submit.on('click', function(){
 
@@ -17,7 +19,7 @@ $submit.on('click', function(){
     // if i get cors error, prepend this:  https://cors-anywhere.herokuapp.com/ to the url (see animal facts example)
     var animalFactsURL = `https://cors-anywhere.herokuapp.com/https://cat-fact.herokuapp.com/facts/random?animal_type=${type}&amount=2`;
     var petFinderURL = `https://cors-anywhere.herokuapp.com/https://api.petfinder.com/v2/animals?type=${type}&location=${location}`;
-    var petFinderAPI = "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiJLakNOeEhOazAyMXdaVERIZ05RUFlEb0QxYm1yQmYwNFRsRmZmMVRyYTFNSlJLeXhOSSIsImp0aSI6IjA0YWYyNGQwOTk0ZjA0ZDQyMjkzMTliMDJhZGIwOTRkZjVmODhmMzk0NDFmMzRlMmViZjg3ZWFmNTJmZmNhNWJlMGI3MzVkMDlmOGFkZDAyIiwiaWF0IjoxNTg2MTk3OTQ3LCJuYmYiOjE1ODYxOTc5NDcsImV4cCI6MTU4NjIwMTU0Nywic3ViIjoiIiwic2NvcGVzIjpbXX0.IXN5KvEVN0JSp3vXTzP-TjRjqu_3ktHl-FtmpIBJESbf_czklnYQfpcO1HyEfDcq4qGr3druZ87tKN9k7ct3OT64koEJa0ZX5mDFeXWNI315Q7kNZnnYcmmyCq1VAjkYoAV9ozr1yBVZ7n5ter1x9DMAk7Y6IemWo-eRLtYG0qybQrkyxg1o-qcnKj_pVumeqj4kOQDbowx7plUGuTsFPUuaI3r2KarwPLrSfbswDl8RgD0pWWiNeaUWEcgLChi1oxiTyWwORiJPbU_b2ZIhUaVkdci73IHnQ0Rq6NwSF8vbHQ3jo96yqyjP8jAU02FRMyrsjMoCRTaB2HAGwvP9oA";
+    var petFinderAPI = "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiJDeXRQZVNycEZNZHhkUU9ac3Q3WFRmQ29lZjJRdlowQ1ZiZEJJZVVBUjhEaElkY3U1TiIsImp0aSI6ImZjZDE2NjAyNDQ1OWQ3YzRmYWEzOGU1ZTM2ZDE2MDE3MmEzZGE5YjlmNjZkOWQ3YjlkMzM4MzA0NzBkNGJjN2NlZDYwNzVjNTE2YzRlNDA1IiwiaWF0IjoxNTg2MTk2OTI1LCJuYmYiOjE1ODYxOTY5MjUsImV4cCI6MTU4NjIwMDUyNSwic3ViIjoiIiwic2NvcGVzIjpbXX0.ZJ0U9YkVjVPggUs_7IMxfosZdZGm8neulgaN1h82RlLs85yUOtrkXBVFlTnqNkem-vntXo5-I_-xsy7tmmKY-sPYrMUZJ1YvwedhERGLbFD0MFLKC1tAT-ZNQY-8HGc6gdk1NWslpNsHDSwsYASA8cZGKoDIyLMLuabetq_ai05Wh1xHrLK714gv-lFcSL0kc1X5KYksQTUReieq-FZ6MFU2L_bllkVs0enf1KPiU0DA4mCJyNptHezrsgsGvbcoB-9g7luwKjVcGn_ozgo0PKz-Scdf6LFjpVzKR-piOkoiqyGVCmVqsSheTgxykfUH8izumAL_65IjJ19sZH6WKw";
 
     // Animal facts AJAX
     $.ajax({
@@ -59,12 +61,15 @@ $submit.on('click', function(){
                 // animal gender
                 var animalGender = response.animals[i].gender;
                 // animal picture
-                var animalPic;
+                var animalPic; // try setting this to null (try this first)
                 
                 // if the animal picture exists, store it in animalPic
                 if(response.animals[i].photos[0] !== undefined){
+                    // this is called "short circuiting"
                     animalPic = response.animals[i].photos[0].large;
-                }   // else {
+                } else {
+                    animalPic = placeholder;
+                    // animalPic = null; (try this second)
                     // $animalPicEl.attr("src", "https://i.pinimg.com/originals/b8/be/0e/b8be0e0e188abc4169051df8b1a90a76.jpg");
                     // var $animalURL = $('<a>');
                     // $animalURL.attr('href', "https://i.pinimg.com/originals/b8/be/0e/b8be0e0e188abc4169051df8b1a90a76.jpg");
@@ -72,7 +77,7 @@ $submit.on('click', function(){
                     // $animalPicEl.attr("src", animalPic);
                     // $animalURL.append($animalPicEl);
                     // $adoptionData.append($animalURL);
-                // }
+                }
                 
                 // animal URL to get more info
                 var animalURL = response.animals[i].url;
@@ -91,7 +96,17 @@ $submit.on('click', function(){
             $animalTypeEl.text(animalType);
             $animalBreedEl.text(animalBreed);
             $animalAgeEl.text(animalAge);
-            $animalDescriptionEl.text(animalDescription);
+
+            if(animalDescription){
+                $animalDescriptionEl.html(`${animalDescription.toString()}`);
+            } else {
+                $animalDescriptionEl.html(`${animalDescription}`);
+            }
+            
+            
+
+
+            // console.log(animalDescription.replace("\'", "\\\'"));
             $animalName.text(animalName);
             $animalGender.text(animalGender);
 
@@ -109,7 +124,7 @@ $submit.on('click', function(){
 
                 
             // add picture to html    
-                if(animalPic){
+                // if(animalPic){
                     var $animalURL = $('<a>');
                     $animalURL.attr('href', animalURL);
                     $animalURL.attr('target', "_blank");
@@ -117,7 +132,7 @@ $submit.on('click', function(){
                     $animalPicEl.attr("src", animalPic);
                     $animalURL.append($animalPicEl);
                     $adoptionData.append($animalURL);
-                }
+                // }
                      
         }
 
