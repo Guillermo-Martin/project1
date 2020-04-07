@@ -1,24 +1,64 @@
-.navbar{
-    text-align: center;
-    padding-top: 10px;
-    margin-left: 37.5%;
-    margin-right: 37.5%;
-}
-.submitbtn{
-    text-align: center;
-}
-body{
-    text-align: center;
-}
-#submit{
-    background-color: lightskyblue
-}
-
-#adoptionData{
-    text-align: center;
-}
-.card{
-    color: darkmagenta;
-    margin: auto;
-    /* text-align: center !important; */
-}
+    .navbar {
+        text-align: center;
+        padding-top: 10px;
+        margin-left: 37.5%;
+        margin-right: 37.5%;
+        border-width: medium;
+        border-color: black;
+        background-color: red;
+    }
+    
+    {}
+    
+    .line {
+        size: 20px;
+    }
+    
+    img {
+        border-image: auto;
+        border-width: medium;
+        border-color: black;
+    }
+    
+    .submitbtn {
+        text-align: center;
+    }
+    
+    body {
+        text-align: center;
+    }
+    
+    #submit {
+        background-color: red;
+        color: whitesmoke;
+        font-variant: small-caps;
+        font-size: medium;
+    }
+    
+    .card {}
+    
+    #adoptionData {
+        text-align: center;
+        font-variant: small-caps;
+    }
+    
+    .card {
+        color: red;
+        margin: auto;
+        border-width: medium;
+        border-color: black;
+        /* text-align: center !important; */
+    }
+    
+    #type {
+        color: red;
+        font-variant: small-caps;
+        font-size: large;
+    }
+    
+    label {
+        color: Red;
+        font-size: 20px;
+        font-variant: small-caps;
+        font-size: large;
+    }
