@@ -8,9 +8,10 @@
         background-color: red;
     }
     
+    {}
+    
     .line {
-        color: black;
-        width: auto;
+        size: 20px;
     }
     
     img {
@@ -33,6 +34,8 @@
         font-variant: small-caps;
         font-size: medium;
     }
+    
+    .card {}
     
     #adoptionData {
         text-align: center;
