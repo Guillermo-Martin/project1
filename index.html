@@ -1,71 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css"
-    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css" />
     <!-- Compressed CSS -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.2/dist/css/foundation-rtl.min.css"
-      integrity="sha256-wgkuX4RG+TO0/QoU8TisMBs4hRb6OnWZeIk30YpfWHE="
-      crossorigin="anonymous"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.2/dist/css/foundation-float.min.css"
-      integrity="sha256-4ldVyEvC86/kae2IBWw+eJrTiwNEbUUTmN0zkP4luL4="
-      crossorigin="anonymous"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.2/dist/css/foundation-prototype.min.css"
-      integrity="sha256-WkUTcNCS9N9OXBuGE0w6uYBiFviiIsM5JJK6JCol8jQ="
-      crossorigin="anonymous"
-    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.2/dist/css/foundation-rtl.min.css" integrity="sha256-wgkuX4RG+TO0/QoU8TisMBs4hRb6OnWZeIk30YpfWHE=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.2/dist/css/foundation-float.min.css" integrity="sha256-4ldVyEvC86/kae2IBWw+eJrTiwNEbUUTmN0zkP4luL4=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.2/dist/css/foundation-prototype.min.css" integrity="sha256-WkUTcNCS9N9OXBuGE0w6uYBiFviiIsM5JJK6JCol8jQ=" crossorigin="anonymous" />
     <link rel="stylesheet" type="text/css" href="./assets/css/styles.css" />
 
     <title>Pet Adoption</title>
-  </head>
+</head>
 
-  <body>
+<body>
+
     <header class="navbar">
-      <img
-        class="image"
-        src="./assets/images/headerImage.jpg"
-        alt="a photo of dogs"
-        width="400"
-        height="100"
-      />
+        <img class="image" src="./assets/images/headerImage.jpg" alt="a photo of dogs" width="400" height="100">
     </header>
-    <br />
-    <hr />
+    <br>
+    <hr>
     <!-- Form to enter animal info -->
 
     <!-- Choose pet -->
-    <label for="type">What type of pet are you looking for?</label>
-    <select id="type">
-      <option>Dog</option>
-      <option>Cat</option>
+    <main id="option">
+        <label class="dropdown" for="type">What type of pet are you looking for?</label>
+        <i class="fas fa-cat"></i><i class="fas fa-dog"></i>
+        <select id="type">
+    <option>Dog</option>
+    <option>Cat</option>
     </select>
-    <label>Zip Code</label
-    ><input
-      type="text"
-      pattern="[0-9]{5}"
-      title="Five digit zip code"
-      id="zipcode"
-    />
+        <label class="dropdown">Zip Code</label>
+        <input type="text" pattern="[0-9]{5}" title="Five digit zip code" id="zipcode" />
+        </fieldset>
+        <div class="submitbtn">
+            <br>
+            <button id="submit" class="success button">Submit Button</button>
+    </main>
 
-    <!-- Submit Button -->
-    <div class="submitbtn">
-      <br />
-      <button id="submit" class="success button">Submit Button</button>
-    </div>
-
-    <!-- Horizontal Rule -->
     <hr class="line" />
     <br />
     <br />
@@ -78,17 +51,10 @@
     <div class="grid-container" id="adoptionData"></div>
 
     <!-- jQuery, then our JavaScript file -->
-    <script
-      src="https://code.jquery.com/jquery-3.4.1.min.js"
-      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-      crossorigin="anonymous"
-    ></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="./assets/js/script.js"></script>
     <!-- Compressed JavaScript -->
-    <script
-      src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.2/dist/js/foundation.min.js"
-      integrity="sha256-tdB5sxJ03S1jbwztV7NCvgqvMlVEvtcoJlgf62X49iM="
-      crossorigin="anonymous"
-    ></script>
-  </body>
+    <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.2/dist/js/foundation.min.js" integrity="sha256-tdB5sxJ03S1jbwztV7NCvgqvMlVEvtcoJlgf62X49iM=" crossorigin="anonymous"></script>
+</body>
+
 </html>
