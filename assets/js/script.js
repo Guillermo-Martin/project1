@@ -44,6 +44,15 @@ $submit.on('click', function() {
     }).then(function(response) {
         console.log(response);
 
+        // create div with class row medium-unstack
+        var $rowMediumUnstack = $('<div>');
+        $rowMediumUnstack.addClass('row medium-unstack');      // moved the bottom stuff here
+        $rowMediumUnstack.attr('id', 'row-medium');
+        $('#adoptionData').append($rowMediumUnstack);
+
+        var $rowMedium = $('#row-medium');
+
+
         for (var i = 0; i < response.animals.length; i++) {
 
             // gather all the data
@@ -75,13 +84,13 @@ $submit.on('click', function() {
 
             // create the cards
 
-            // create div with class row medium-unstack
-            var $rowMediumUnstack = $('<div>');
-            $rowMediumUnstack.addClass('row medium-unstack');
-            $rowMediumUnstack.attr('id', 'row-medium');
-            $('#adoptionData').append($rowMediumUnstack);
+            // // create div with class row medium-unstack
+            // var $rowMediumUnstack = $('<div>');
+            // $rowMediumUnstack.addClass('row medium-unstack');
+            // $rowMediumUnstack.attr('id', 'row-medium');
+            // $('#adoptionData').append($rowMediumUnstack);
 
-            var $rowMedium = $('#row-medium');
+            // var $rowMedium = $('#row-medium');
 
             // create column medium-3 and append to row medium
             var $columnMed = $('<div>');
