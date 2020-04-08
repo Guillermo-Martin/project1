@@ -20,7 +20,7 @@ $submit.on('click', function() {
     // if i get cors error, prepend this:  https://cors-anywhere.herokuapp.com/ to the url (see animal facts example)
     var animalFactsURL = `https://cors-anywhere.herokuapp.com/https://cat-fact.herokuapp.com/facts/random?animal_type=${type}&amount=2`;
     var petFinderURL = `https://cors-anywhere.herokuapp.com/https://api.petfinder.com/v2/animals?type=${type}&location=${location}`;
-    var petFinderAPI = "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiJLakNOeEhOazAyMXdaVERIZ05RUFlEb0QxYm1yQmYwNFRsRmZmMVRyYTFNSlJLeXhOSSIsImp0aSI6IjJjMGE0MjI4ZTFiOWYyODE2NmNhYmM5NmYxNzAxODQzYjcwZDYzZGNkMzcyMDI5NjkxMWE2ZTZlMTdhYzVhNmNjZWQ0ZWYyOTM2NGEzMjU2IiwiaWF0IjoxNTg2MzIyMTA3LCJuYmYiOjE1ODYzMjIxMDcsImV4cCI6MTU4NjMyNTcwNywic3ViIjoiIiwic2NvcGVzIjpbXX0.DE8VOT6s8YfizRjG9aLXyCkB6DSq9ZMTAiyfACM_m4s-dursB5rpJk2Dhels6EKuRQx1qw1kL2LPun9GI4lQfYjk0FMKsbWfPv7oetur6YTWxj3kIqQusm2Airu-AL-El47HmGy6NpN0Gu5DAkeWK371Ce5vTWshanZpoFVBYEYBcZvqwQwA40oB5SugHhTbS-0oBN_W_Krn6gFsML8-1VxjLG0t2kbjLTrEF45EBrEJBZ9I-sEu8zgbUuLkp9HurP7BBFMhDFh9fSOvSOx0q4ClMeUgicSFU1DS9T1mrI4fp5_0fnbz2pubIEwNAJ4RQcCUNYTj6OiTpKJ3Y0IGTw";
+    var petFinderAPI = "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiJDeXRQZVNycEZNZHhkUU9ac3Q3WFRmQ29lZjJRdlowQ1ZiZEJJZVVBUjhEaElkY3U1TiIsImp0aSI6IjM3NjczMWZjNGUwMWZmNDYwNWRkMzg0YzI5OTI0ZWIwZWVhZWE3ZTZlNmU0OWI4MDczYzNhODZlOGU1MDg2Nzg3ODlhZWUxNDdiODY5MDAzIiwiaWF0IjoxNTg2MzY0NjYzLCJuYmYiOjE1ODYzNjQ2NjMsImV4cCI6MTU4NjM2ODI2Mywic3ViIjoiIiwic2NvcGVzIjpbXX0.M8KnY26QALVkeIqVxGtpoAKN7irkCjkbLfHtDhTXgIh6n5jPMKarY1WIp3SE_EoN1id9J4h4vFqsnFsakf3Q-kJy5Z53Gv-0MoiFZ14lxuC8UGsB83SDhmEo70TK-raxcIpWQnfBSt4QKwLnXm83XFwhN-y90kwIZJCjaQM3rhYd9UeM9kAGET8Dn4rzfxqkOjV8JSzIghv2DDWUeKrP16fs1cuhcztR1AVhvHRZXYSECp1XXg_bh7dlkmq1TvtweZyrG-QMb9S4t8bUJbdcq1PozPHHlN_eDEEs51JPJm_GTmKHRA5w1OqE3xTIAG-eGwD3hUtHzeXkAdhFeHS_fw";
 
     // Animal facts AJAX
     $.ajax({
@@ -108,6 +108,7 @@ $submit.on('click', function() {
             $cardHeader.attr('id', 'card-header-1');
             $cardHeader.addClass('card-divider');
             $cardHeader.text(animalName);
+            $cardHeader.addClass('cardHeader');
             $card.append($cardHeader);
 
             // create card picture link
