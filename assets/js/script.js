@@ -6,6 +6,7 @@ var $submit = $("#submit");
 var placeholder = "./assets/images/placeholder.jpg";
 
 // Add event listener
+
 $submit.on("click", function () {
   // empty the div when submit is clicked
   $("#adoptionData").empty();

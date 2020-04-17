@@ -7,6 +7,11 @@
   border-color: black;
 }
 
+.cardHeader {
+    color: white;
+    font-size: 20px;
+}
+
 .line {
   size: 20px;
 }
