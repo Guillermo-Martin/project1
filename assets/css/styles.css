@@ -1,10 +1,10 @@
 .navbar {
-    text-align: center;
-    padding-top: 10px;
-    margin-left: 37.5%;
-    margin-right: 37.5%;
-    border-width: medium;
-    border-color: black;
+  text-align: center;
+  padding-top: 10px;
+  margin-left: 37.5%;
+  margin-right: 37.5%;
+  border-width: medium;
+  border-color: black;
 }
 
 .cardHeader {
@@ -13,77 +13,86 @@
 }
 
 .line {
-    size: 20px;
+  size: 20px;
 }
 
 img {
-    border-image: auto;
-    border-width: medium;
-    border-color: black;
+  border-image: auto;
+  border-width: medium;
+  border-color: black;
 }
 
 .submitbtn {
-    text-align: center;
+  text-align: center;
 }
 
 body {
-    text-align: center;
+  text-align: center;
 }
 
 #submit {
-    background-color: red;
-    color: whitesmoke;
-    font-variant: small-caps;
-    font-size: medium;
+  background-color: red;
+  color: whitesmoke;
+  font-variant: small-caps;
+  font-size: medium;
 }
 
 .fas fa-cat {
-    color: red;
+  color: red;
 }
 
 .fas fa-dog {
-    color: red;
+  color: red;
 }
 
 #adoptionData {
-    text-align: center;
-    font-variant: small-caps;
+  text-align: center;
+  font-variant: small-caps;
 }
 
 .card {
-    color: red;
-    margin: auto;
-    border-width: medium;
-    border-color: black;
-    /* text-align: center !important; */
+  color: red;
+  margin: auto;
+  border-width: medium;
+  border-color: black;
+  /* text-align: center !important; */
 }
 
 #type {
-    color: red;
-    font-variant: small-caps;
-    font-size: large;
-    text-align: center;
+  color: red;
+  font-variant: small-caps;
+  font-size: large;
+  text-align: center;
+  width: 100px;
 }
 
 label {
-    color: Red;
-    font-size: 20px;
-    font-variant: small-caps;
-    font-size: large;
-    text-align: center;
+  color: Red;
+  font-size: 20px;
+  font-variant: small-caps;
+  font-size: large;
+  text-align: center;
+  /* width:100px; */
 }
 
 select {
-    text-align: center;
+  text-align: center;
 }
 
 main {
-    margin-left: 80px;
-    margin-right: 80px;
-    padding-left: 400px;
-    padding-right: 400px;
+  margin-left: 80px;
+  margin-right: 80px;
+  padding-left: 40px;
+  padding-right: 40px;
 }
 
 .card-divider {
-    background-color: black;
+  background-color: black;
+}
+#zipcode {
+  width: 100px;
+  margin: auto;
+}
+.grid-container {
+  box-sizing: auto;
 }
